@@ -36,7 +36,7 @@ return {
     --
     -- Default capabilities (works fine without cmp)
     --
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
     --
     -- 4. Setup each installed server using the new API

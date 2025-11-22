@@ -1,6 +1,6 @@
 -- lua/plugins/rose-pine.lua
-vim.opt.laststatus = 2 -- Or 3 for global statusline
-vim.opt.statusline = " %f %m %= %l:%c ☾ "
+-- vim.opt.laststatus = 2 -- Or 3 for global statusline
+-- vim.opt.statusline = " %f %m %= %l:%c ☾ "
 return {
 	"rose-pine/neovim",
 	name = "rose-pine",
@@ -8,8 +8,8 @@ return {
 	config = function()
 		require("rose-pine").setup({
 			variant = "moon", 
-			disable_background = true,
-			disable_float_background = true,
+        --    disable_background = true,
+		--	disable_float_background = true,
 			highlight_groups = {
 				StatusLine = { fg = "foam", bg = "foam", blend = 10 },
 				StatusLineNC = { fg = "subtle", bg = "surface" },
