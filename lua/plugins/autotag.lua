@@ -1,7 +1,7 @@
 return {
-  "windwp/nvim-ts-autotag",
-  ft = { "html", "javascript", "typescript", "typescriptreact", "tsx", "xml" }, 
+  "windwp/nvim-autopairs",
+  event = "InsertEnter",
   config = function()
-    require("nvim-ts-autotag").setup()
+    require("nvim-autopairs").setup({})
   end,
 }

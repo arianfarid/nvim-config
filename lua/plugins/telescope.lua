@@ -10,7 +10,9 @@ return {
 
 		telescope.setup({
 			defaults = {
-				winblend = 0
+				winblend = 0,
+                file_ignore_patterns = { "node_modules", "^node_modules/", "/node_modules/" },
+
 			}
 		})
 		vim.keymap.set('n', '<leader>ff', builtin.find_files, { desc = 'Telescope find files' })

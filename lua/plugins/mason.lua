@@ -9,7 +9,7 @@ return {
         },
       })
     end,
-  },
+      },
 
   {
     "williamboman/mason-lspconfig.nvim",
@@ -19,7 +19,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          "tsserver",
+          "ts_ls",
           "bashls",
           "jsonls",
           "pyright",
