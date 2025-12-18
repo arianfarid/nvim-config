@@ -24,6 +24,7 @@ return {
           "jsonls",
           "pyright",
           "rust_analyzer",
+          "zls",
         },
         automatic_installation = true,
       })

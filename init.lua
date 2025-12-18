@@ -1,4 +1,4 @@
 require("config")
 vim.lsp.enable({
-	'luals'
+	'lua_ls'
 })

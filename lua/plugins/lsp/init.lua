@@ -62,12 +62,26 @@ return {
             },
           },
         })
-
+        vim.lsp.config("crystalline", {
+          cmd = { "crystalline", "--stdio" },
+          filetypes = { "crystal" },
+          root_dir = vim.fs.root(0, {
+            "shard.yml",
+            ".git",
+          }) or vim.fn.getcwd(),
+          capabilities = capabilities,
+        })
         vim.lsp.config("gopls", {
           capabilities = capabilities,
           settings = {
             gopls = { gofumpt = true },
           },
+        })
+
+        vim.lsp.enable({
+          "lua_ls",
+          "gopls",
+          "crystalline",
         })
         --
         -- 5. Example override for Lua (recommended)

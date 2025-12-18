@@ -12,6 +12,16 @@ return {
       },
     },
 	config = function()
+        local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+
+        parser_configs.crystal = {
+          install_info = {
+            url = "https://github.com/crystal-lang-tools/tree-sitter-crystal",
+            files = { "src/parser.c", "src/scanner.c" },
+            branch = "main",
+          },
+          filetype = "crystal",
+        }
 		require("nvim-treesitter.configs").setup({
 			highlight = { enable = true },
 			indent = { enable = true },
@@ -31,6 +41,8 @@ return {
 				"rust",
 				"python",
 				"query",
+                "zig",
+                "crystal",
 			},
 			sync_install = false,
 
