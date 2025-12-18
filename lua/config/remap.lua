@@ -35,3 +35,15 @@ vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float)
 
 -- Normal delete
 vim.keymap.set("i", "<M-BS>", "<C-W>")
+
+-- Yank to system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>y", '"+y', { desc = "Yank to system clipboard" })
+vim.keymap.set("n", "<leader>Y", '"+Y', { desc = "Yank line to system clipboard" })
+
+-- Paste from system clipboard
+vim.keymap.set({ "n", "v" }, "<leader>p", '"+p', { desc = "Paste from system clipboard" })
+vim.keymap.set({ "n", "v" }, "<leader>P", '"+P', { desc = "Paste before cursor (system clipboard)" })
+
+-- Delete without yanking (very Primeagen)
+vim.keymap.set({ "n", "v" }, "<leader>d", '"_d', { desc = "Delete without yanking" })
+
