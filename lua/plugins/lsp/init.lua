@@ -6,6 +6,11 @@ return {
     },
 
     config = function()
+         vim.filetype.add({
+             extension = {
+               cr = "crystal",
+             },
+           })
         --
         -- 1. Setup Mason
         --
@@ -77,7 +82,7 @@ return {
             gopls = { gofumpt = true },
           },
         })
-
+        
         vim.lsp.enable({
           "lua_ls",
           "gopls",

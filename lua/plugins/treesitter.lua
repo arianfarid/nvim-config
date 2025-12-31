@@ -4,6 +4,7 @@ return {
     dependencies = {
       -- Add nvim-ts-autotag
       { "windwp/nvim-ts-autotag" },
+      { "crystal-lang-tools/tree-sitter-crystal", lazy = false },
     },
     opts = {
       autotag = {
@@ -23,8 +24,17 @@ return {
           filetype = "crystal",
         }
 		require("nvim-treesitter.configs").setup({
-			highlight = { enable = true },
 			indent = { enable = true },
+            textobjects = {
+                select = {
+                    enable = true,
+                    lookahead = true,
+                    keymaps = {
+                        ["af"] = "@function.outer",
+                        ["if"] = "@function.inner",
+                    }
+                }
+            },
 			ensure_installed = {
 				"lua",
 				"vim",
@@ -43,6 +53,9 @@ return {
 				"query",
                 "zig",
                 "crystal",
+                "elixir",
+                "heex",
+                "eex",
 			},
 			sync_install = false,
 
@@ -50,7 +63,7 @@ return {
 			highlight = {
 				enable = true,
 				-- disable = {"c", }
-				additional_vim_regex_highlighting = true,
+				additional_vim_regex_highlighting = false,
 			},
 		})
 	end,
